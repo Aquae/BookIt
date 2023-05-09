@@ -13,6 +13,3 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-// testing isaac
-// yeeppppppppppp testing :)
-// alsooo testing >:)

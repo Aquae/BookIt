@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">BookIt</string>
+    <string name="users">Users</string>
+    <string name="business">Business</string>
+    <string name="we_are_great_for_you">We are great for you</string>
+    <string name="welcome_msg">Welcome msg.................................</string>
+    <string name="this_is_a_multi_line_paragraph_that_can_span_multiple_lines_of_text_lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_fusce_vestibulum_bibendum_velit_sit_amet_hendrerit_ex_posuere_sit_amet_praesent_in_odio_a_arcu_lacinia_bibendum_sed_ut_neque_quis_augue_feugiat_consectetur_vel_id_risus_nunc_non_ipsum_varius_dignissim_lacus_at_dictum_elit_nullam_viverra_sem_a_elit_tincidunt_euismod_pulvinar_tellus_mollis_vivamus_at_nunc_dolor_proin_laoreet_lorem_quis_venenatis_ullamcorper">This is a multi-line paragraph that can span multiple lines of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum bibendum velit, sit amet hendrerit ex posuere sit amet. Praesent in odio a arcu lacinia bibendum. Sed ut neque quis augue feugiat consectetur vel id risus. Nunc non ipsum varius, dignissim lacus at, dictum elit. Nullam viverra sem a elit tincidunt, euismod pulvinar tellus mollis. Vivamus at nunc dolor. Proin laoreet lorem quis venenatis ullamcorper.</string>
+    <string name="heading">Heading</string>
+    <string name="button_1">Button 1</string>
+    <string name="button_2">Button 2</string>
+    <string name="we_are_great_for_you1">We are great for you</string>
+    <string name="welcome_to_our_service_booking_app_book_your_next_appointment_hassle_free_and_enjoy_top_notch_services_from_our_platform">Welcome to our service booking app! Book your next appointment hassle-free and enjoy top-notch services from our platform.</string>
+    <string name="users1">Users</string>
+    <string name="business1">Business</string>
 </resources>
