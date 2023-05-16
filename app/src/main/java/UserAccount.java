@@ -1,4 +1,5 @@
-public class UserAccount {
+import java.util.ArrayList;
+import java.util.List;
     public class UserAccount extends Account {
         private List<Service> bookings;
 
@@ -20,4 +21,3 @@ public class UserAccount {
             bookings.add(service);
         }
     }
-}

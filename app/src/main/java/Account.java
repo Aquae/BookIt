@@ -1,4 +1,3 @@
-public class Account {
     public class Account {
         private String name;
         private String email;
@@ -43,4 +42,4 @@ public class Account {
         public void setLocation(String location) {
             this.location = location;
         }
-    }}
+    }

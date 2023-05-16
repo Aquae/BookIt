@@ -1,4 +1,5 @@
-public class BusinessAccount {
+import java.util.ArrayList;
+import java.util.List;
     public class BusinessAccount extends Account {
         private String photo;
         private String description;
@@ -48,4 +49,4 @@ public class BusinessAccount {
         public void addService(Service service) {
             listOfServices.add(service);
         }
-    }}
+    }
