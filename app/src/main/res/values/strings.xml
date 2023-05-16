@@ -12,4 +12,18 @@
     <string name="welcome_to_our_service_booking_app_book_your_next_appointment_hassle_free_and_enjoy_top_notch_services_from_our_platform">Welcome to our service booking app! Book your next appointment hassle-free and enjoy top-notch services from our platform.</string>
     <string name="users1">Users</string>
     <string name="business1">Business</string>
+    <string name="please_enter_your_email_and_password_to_create_an_acocunt">Please enter your email and password to create an acocunt</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="signup">signup</string>
+    <string name="login">login</string>
+    <string name="title_activity_business_login_sign_up">businessLoginSignUp</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

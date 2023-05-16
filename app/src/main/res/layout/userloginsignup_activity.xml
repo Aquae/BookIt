@@ -28,7 +28,7 @@
             android:layout_alignParentEnd="true"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Please enter your email and password to create an acocunt"
+            android:text="@string/please_enter_your_email_and_password_to_create_an_acocunt"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -43,13 +43,13 @@
                 android:id="@+id/edittextemail"
                 android:layout_width="268dp"
                 android:layout_height="56dp"
-                android:hint="email" />
+                android:hint="@string/email" />
 
             <EditText
                 android:id="@+id/edittextpassword"
                 android:layout_width="272dp"
                 android:layout_height="55dp"
-                android:hint="password"
+                android:hint="@string/password"
                 android:inputType="textPassword" />
 
         </LinearLayout>
@@ -67,14 +67,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="login" />
+                android:text="@string/login" />
 
             <Button
                 android:id="@+id/signupbutton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="signup" />
+                android:text="@string/signup" />
 
         </LinearLayout>
 
