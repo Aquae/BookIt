@@ -1,3 +1,5 @@
+package com.example.bookit;
+
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
