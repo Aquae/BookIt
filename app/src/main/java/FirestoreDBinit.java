@@ -6,65 +6,75 @@ import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
+import java.util.ArrayList;
+import java.util.List;
 import com.google.firebase.database.annotations.Nullable;
-
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.io.FileInputStream;
 import java.io.IOException;
 public class FirestoreDBinit {
-    public static void main(String[] args) throws IOException {
-        // Load the Firebase service account credentials
-        FileInputStream serviceAccount = new FileInputStream("path/to/serviceAccountKey.json");
+    public static void main(String[] args) {
+        FileInputStream serviceAccount = null;
+        Firestore firestore = null;
 
-        // Initialize Firebase using the service account credentials
-        FirebaseOptions options = FirebaseOptions.builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .build();
+        try {
+            // Load the Firebase service account credentials
+            serviceAccount = new FileInputStream("path/to/serviceAccountKey.json");
 
-        FirebaseApp.initializeApp(options);
+            // Initialize Firebase using the service account credentials
+            FirestoreOptions firestoreOptions = FirestoreOptions.newBuilder()
+                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .build();
+            firestore = firestoreOptions.getService();
 
-        // Get the Firestore instance
-        Firestore firestore = FirestoreClient.getFirestore();
+            // Define the document reference
+            String documentId = "your-document-id"; // Replace with the actual document ID
+            DocumentReference docRef = firestore.collection("businesses").document(documentId);
 
-        // Prompt the user for input
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the name: ");
-        String name = scanner.nextLine();
-        System.out.print("Enter the description: ");
-        String description = scanner.nextLine();
-        System.out.print("Enter the latitude: ");
-        double latitude = scanner.nextDouble();
-        System.out.print("Enter the longitude: ");
-        double longitude = scanner.nextDouble();
+            // Read the fields from Firestore
+            ApiFuture<DocumentSnapshot> future = docRef.get();
 
-        // Create a new business object
-        Business business = new Business(name, description, latitude, longitude);
+            // Handle exceptions
+            DocumentSnapshot document = future.get(5, TimeUnit.SECONDS);
+            if (document.exists()) {
+                // Get the field values
+                String address = document.getString("Address");
+                String description = document.getString("Description");
+                GeoPoint location = document.getGeoPoint("Location");
+                String name = document.getString("Name");
 
-        // Add the business object to Firestore
-        DocumentReference businessRef = firestore.collection("businesses").document();
-        businessRef.set(business);
+                // Perform operations with the field values
+                System.out.println("Address: " + address);
+                System.out.println("Description: " + description);
+                System.out.println("Location: " + location.getLatitude() + "° N, " + location.getLongitude() + "° E");
+                System.out.println("Name: " + name);
 
-        // Access the ID of the newly created document
-        String businessId = businessRef.getId();
-        System.out.println("Business ID: " + businessId);
-    }
+                // Update a field
+                docRef.update("Description", "Updated description").get(5, TimeUnit.SECONDS);
+                System.out.println("Description updated successfully");
 
-    private static class Business {
-        private String name;
-        private String description;
-        private double latitude;
-        private double longitude;
-
-        public Business() {
+                // Delete a field
+                docRef.update("Address", FieldValue.delete()).get(5, TimeUnit.SECONDS);
+                System.out.println("Address field deleted successfully");
+            } else {
+                System.out.println("Document does not exist");
+            }
+        } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
+            e.printStackTrace();
+        } finally {
+            // Close the FileInputStream and Firestore instances
+            if (serviceAccount != null) {
+                try {
+                    serviceAccount.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (firestore != null) {
+                firestore.close();
+            }
         }
-
-        public Business(String name, String description, double latitude, double longitude) {
-            this.name = name;
-            this.description = description;
-            this.latitude = latitude;
-            this.longitude = longitude;
-        }
-
-        // Getters and setters
-        // ...
     }
 }
