@@ -37,7 +37,7 @@ public class FirestoreDBinit {
             firestore = firestoreOptions.getService();
 
             // Define the document reference
-            String documentId = "BusinessAccount"; // Replace with the actual document ID
+            String documentId = "com.example.bookit.MainActivity.BusinessAccount"; // Replace with the actual document ID
             DocumentReference docRef = firestore.collection("businesses").document(documentId);
 
             // Read the fields from Firestore
