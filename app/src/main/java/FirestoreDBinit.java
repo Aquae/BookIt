@@ -9,8 +9,13 @@ import com.google.firebase.cloud.FirestoreClient;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.firebase.database.annotations.Nullable;
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.FieldValue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import com.google.cloud.firestore.DocumentSnapshot;
+import com.google.cloud.firestore.GeoPoint;
+
 import java.util.concurrent.TimeoutException;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,7 +26,7 @@ public class FirestoreDBinit {
 
         try {
             // Load the Firebase service account credentials
-            serviceAccount = new FileInputStream("path/to/serviceAccountKey.json");
+            serviceAccount = new FileInputStream("google-services.json");
 
             // Initialize Firebase using the service account credentials
             FirestoreOptions firestoreOptions = FirestoreOptions.newBuilder()
@@ -30,7 +35,7 @@ public class FirestoreDBinit {
             firestore = firestoreOptions.getService();
 
             // Define the document reference
-            String documentId = "your-document-id"; // Replace with the actual document ID
+            String documentId = "BusinessAccount"; // Replace with the actual document ID
             DocumentReference docRef = firestore.collection("businesses").document(documentId);
 
             // Read the fields from Firestore
@@ -72,9 +77,7 @@ public class FirestoreDBinit {
                     e.printStackTrace();
                 }
             }
-            if (firestore != null) {
-                firestore.close();
-            }
+
         }
     }
 }
