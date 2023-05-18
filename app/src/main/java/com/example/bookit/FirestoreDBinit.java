@@ -1,22 +1,18 @@
 package com.example.bookit;
 
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.FirestoreOptions;
-import com.google.cloud.firestore.WriteResult;
-import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.FirebaseFirestore;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.cloud.FirestoreClient;
-import java.util.ArrayList;
-import java.util.List;
-import com.google.firebase.database.annotations.Nullable;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.FieldValue;
+import com.google.firebase.firestore.FieldValue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.GeoPoint;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.GeoPoint;
+
+import java.util.concurrent.TimeoutException;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 import java.util.concurrent.TimeoutException;
 import java.io.FileInputStream;
