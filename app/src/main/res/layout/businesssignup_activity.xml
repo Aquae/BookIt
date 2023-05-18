@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.bookit.BusinessSignup">
+
+    <EditText
+        android:id="@+id/edit_name_b"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:hint="Name Of Business"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_b_description"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:hint="Description"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_b_address"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Address"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_b_number"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:hint="Phone Number"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_b_website"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:hint="website (optional)"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="signup"
+        android:text="signup" />
+
+
+</LinearLayout>

@@ -14,8 +14,6 @@ import android.widget.Toast;
 
 
 
-
-
 public class Userloginsignup extends Activity {
     // Firebase Authentication
     private FirebaseAuth mAuth;
@@ -100,5 +98,4 @@ public class Userloginsignup extends Activity {
                     }
                 });
     }
-    }
-
+}

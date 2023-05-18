@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name=".Userloginsignup"
-            android:exported="true" />
+            android:exported="true"></activity>
     </application>
 
 </manifest>

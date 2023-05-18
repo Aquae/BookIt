@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "620472690744",
+    "firebase_url": "https://b00kit-default-rtdb.firebaseio.com",
     "project_id": "b00kit",
     "storage_bucket": "b00kit.appspot.com"
   },
