@@ -12,10 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookIt"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.login.businessLoginSignUp"
-            android:exported="false"
-            android:label="@string/title_activity_business_login_sign_up" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -27,6 +24,13 @@
         </activity>
         <activity
             android:name=".Userloginsignup"
+            android:exported="true"></activity>
+        <activity
+        android:name=".BusinessSignup"
+        android:exported="true"></activity>
+
+        <activity
+            android:name=".ServiceSignup"
             android:exported="true"></activity>
     </application>
 

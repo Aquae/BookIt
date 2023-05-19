@@ -3,8 +3,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -50,11 +55,27 @@ public class BusinessSignup extends AppCompatActivity {
                 Business business = new Business(name, description, address, phoneNumber, website);
 
                 // Save the business object to Firestore
+                businessRef.add(business)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                // Business object saved successfully
+                                String businessId = documentReference.getId();
+                                // Optionally, you can show a success message or navigate to another activity
+                                Intent intent = new Intent(BusinessSignup.this, ServiceSignup.class);
+                                intent.putExtra("businessId", businessId);
+                                startActivity(intent);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(Exception e) {
+                                // Error occurred while saving the business object
+                                Toast.makeText(BusinessSignup.this, "Failed to save business.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
-
-                // Optionally, you can show a success message or navigate to another activity
             }
-
         });
 
     }
