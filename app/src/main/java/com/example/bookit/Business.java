@@ -24,6 +24,7 @@ public class Business {
         this.type = type;
     }
 
+
     // Getter and setter methods for the attributes
 
     public String getName() {

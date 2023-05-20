@@ -40,9 +40,7 @@
     <string name="afternoon">Afternoon</string>
     <string-array name="menu_options">
     <item>Hairdresser</item>
-    <item>Chiropractor</item>
-    <item>Physiotherapy</item>
-    <item>Dentist</item>
-    <item>Trades</item>
+    <item>Carpenter</item>
+    <item>Mechanic</item>
     </string-array>
 </resources>

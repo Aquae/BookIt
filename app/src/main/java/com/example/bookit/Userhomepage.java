@@ -1,28 +1,70 @@
 package com.example.bookit;
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Userhomepage extends AppCompatActivity implements View.OnClickListener {
 
-public class Userhomepage {
-    public static class UserAccount extends MainActivity.Account {
-        private List<MainActivity.Service> bookings;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.userhomepage_activity);
 
-        public UserAccount(String name, String email, String password, String location) {
-            super(name, email, password, location);
-            this.bookings = new ArrayList<>();
+        ImageView hairdresserImage = findViewById(R.id.Hairdresser);
+        ImageView chiropractorImage = findViewById(R.id.Chiropractor);
+        ImageView restaurantImage = findViewById(R.id.Dentist);
+        ImageView physiotherapistImage = findViewById(R.id.Physiotherapist);
+
+        hairdresserImage.setOnClickListener(this);
+        chiropractorImage.setOnClickListener(this);
+        restaurantImage.setOnClickListener(this);
+        physiotherapistImage.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.Hairdresser:
+                selectHairdresser();
+                break;
+            case R.id.Chiropractor:
+                selectMechanic();
+                break;
+            case R.id.Dentist:
+                selectRestaurant();
+                break;
+            case R.id.Physiotherapist:
+                selectPhysiotherapist();
+                break;
         }
+    }
 
-        public List<MainActivity.Service> getBookings() {
-            return bookings;
-        }
+    public void selectHairdresser() {
+        // Code to handle hairdresser selection
+        // You can instantiate DisplayBusiness and pass the selected type as an argument
+        DisplayBusiness displayBusiness = new DisplayBusiness();
+        displayBusiness.fetchBusinessesWithType("Hairdresser");
+    }
 
-        public void setBookings(List<MainActivity.Service> bookings) {
-            this.bookings = bookings;
-        }
+    public void selectMechanic() {
+        // Code to handle mechanic selection
+        // You can instantiate DisplayBusiness and pass the selected type as an argument
+        DisplayBusiness displayBusiness = new DisplayBusiness();
+        displayBusiness.fetchBusinessesWithType("Chiropractor");
+    }
 
+    public void selectRestaurant() {
+        // Code to handle restaurant selection
+        // You can instantiate DisplayBusiness and pass the selected type as an argument
+        DisplayBusiness displayBusiness = new DisplayBusiness();
+        displayBusiness.fetchBusinessesWithType("Physiotherapy");
+    }
 
-        public void addBooking(MainActivity.Service service) {
-            bookings.add(service);
-        }
+    public void selectPhysiotherapist() {
+        // Code to handle physiotherapist selection
+        // You can instantiate DisplayBusiness and pass the selected type as an argument
+        DisplayBusiness displayBusiness = new DisplayBusiness();
+        displayBusiness.fetchBusinessesWithType("Dentist");
     }
 }

@@ -9,12 +9,14 @@ import android.os.Bundle;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.Task;
 import android.widget.Toast;
 
 
 
-public class Userloginsignup extends Activity {
+public class Userloginsignup extends AppCompatActivity {
     // Firebase Authentication
     private FirebaseAuth mAuth;
 
@@ -47,6 +49,7 @@ public class Userloginsignup extends Activity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
                 loginWithEmail(email, password);
+                setContentView(R.layout.userhomepage_activity);
             }
         });
 
@@ -57,6 +60,7 @@ public class Userloginsignup extends Activity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
                 signupWithEmail(email, password);
+                setContentView(R.layout.userhomepage_activity);
             }
         });
     }
