@@ -61,6 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="signup"
+        android:background="@drawable/button_main"
         android:text="signup" />
 
 </LinearLayout>

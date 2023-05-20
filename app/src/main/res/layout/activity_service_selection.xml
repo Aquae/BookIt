@@ -76,12 +76,14 @@
                     android:id="@+id/add_busy_time_slot_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/button_main"
                     android:text="Add Busy Time Slot" />
 
                 <Button
                     android:id="@+id/add_available_time_slot_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/button_main"
                     android:text="Add Available Time Slot" />
             </LinearLayout>
 
@@ -90,6 +92,7 @@
                 android:id="@+id/submit_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button_main"
                 android:text="Submit" />
         </LinearLayout>
 
