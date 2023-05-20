@@ -7,76 +7,91 @@
     android:padding="16dp"
     tools:context="com.example.bookit.ServiceSignup">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Service"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/add_available_time_slot_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Available Time Slot" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/available_time_slots_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" />
+            <LinearLayout
+                android:id="@+id/available_time_slots_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/add_busy_time_slot_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Busy Time Slot" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Service"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/busy_time_slots_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" />
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
+                    android:hint="Name"
+                    android:inputType="text" />
 
-    <EditText
-        android:id="@+id/edit_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description"
-        android:inputType="text" />
+                <EditText
+                    android:id="@+id/edit_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:hint="Price"
+                    android:inputType="text" />
 
-    <EditText
-        android:id="@+id/edit_duration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Duration"
-        android:inputType="text" />
+                <EditText
+                    android:id="@+id/edit_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:hint="Description"
+                    android:inputType="text" />
 
-    <EditText
-        android:id="@+id/edit_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:inputType="text" />
+                <EditText
+                    android:id="@+id/edit_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:hint="Duration"
+                    android:inputType="text" />
 
-    <EditText
-        android:id="@+id/edit_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Price"
-        android:inputType="text" />
+            </LinearLayout>
 
-    <EditText
-        android:id="@+id/edit_time_in_cal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Time in Calendar"
-        android:inputType="text" />
+            <LinearLayout
+                android:id="@+id/busy_time_slots_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
+                <EditText
+                    android:id="@+id/edit_time_in_cal"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:hint="Time in Calendar"
+                    android:inputType="text" />
 
+                <Button
+                    android:id="@+id/add_busy_time_slot_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Busy Time Slot" />
+
+                <Button
+                    android:id="@+id/add_available_time_slot_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Available Time Slot" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

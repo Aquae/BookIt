@@ -32,6 +32,9 @@
         <activity
             android:name=".ServiceSignup"
             android:exported="true"></activity>
+        <activity
+        android:name=".BusinessProfile"
+        android:exported="true"></activity>
     </application>
 
 </manifest>

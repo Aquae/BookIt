@@ -1,12 +1,20 @@
 package com.example.bookit;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TimePicker;
+import android.widget.Toast;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +29,9 @@ public class ServiceSignup extends AppCompatActivity {
     private List<String> availableTimeSlots;
     private List<String> busyTimeSlots;
 
+    private FirebaseFirestore db;
+    private CollectionReference serviceRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +45,8 @@ public class ServiceSignup extends AppCompatActivity {
 
         availableTimeSlots = new ArrayList<>();
         busyTimeSlots = new ArrayList<>();
+        db = FirebaseFirestore.getInstance();
+        serviceRef = db.collection("Service");
 
         addAvailableTimeSlotButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +75,26 @@ public class ServiceSignup extends AppCompatActivity {
                 String price = ((EditText) findViewById(R.id.edit_price)).getText().toString();
                 String timeInCal = ((EditText) findViewById(R.id.edit_time_in_cal)).getText().toString();
 
-                // TODO: Submit the service with the collected data
+                Service service = new Service(description, duration, name, price, timeInCal);
+
+                serviceRef.add(service)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                String serviceId = documentReference.getId();
+                                Intent intent = new Intent(ServiceSignup.this, BusinessProfile.class);
+                                intent.putExtra("ServiceId", serviceId);
+                                startActivity(intent);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(Exception e) {
+                                Toast.makeText(ServiceSignup.this, "Failed to save service.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
+
         });
     }
 

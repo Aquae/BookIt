@@ -9,16 +9,19 @@ public class Business {
     private String phoneNumber;
     private String website;
 
+    private String  type;
+
     public Business() {
         // Default constructor required for Firestore
     }
 
-    public Business(String name, String description, String address, String phoneNumber, String website) {
+    public Business(String name, String description, String address, String phoneNumber, String website, String type) {
         this.name = name;
         this.description = description;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.website = website;
+        this.type = type;
     }
 
     // Getter and setter methods for the attributes
@@ -61,5 +64,12 @@ public class Business {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
