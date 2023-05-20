@@ -55,43 +55,76 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"/>
 
-            <ImageView
-                android:id="@+id/Chiropractor"
-                android:contentDescription="Chiropractor"
-                android:layout_width="wrap_content"
-                android:clickable="true"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onImageClick"
-                app:srcCompat="@drawable/carpenter" />
-            <ImageView
-                android:id="@+id/Physiotherapist"
-                android:contentDescription="Physiotherapist"
-                android:layout_width="wrap_content"
-                android:clickable="true"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onImageClick"
-                app:srcCompat="@drawable/mechanic1" />
-            <ImageView
+<!--            <ImageView-->
+<!--                android:id="@+id/Chiropractor"-->
+<!--                android:contentDescription="Chiropractor"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:clickable="true"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onImageClick"-->
+<!--                app:srcCompat="@drawable/carpenter" />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/Physiotherapist"-->
+<!--                android:contentDescription="Physiotherapist"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:clickable="true"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onImageClick"-->
+<!--                app:srcCompat="@drawable/mechanic1" />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/Hairdresser"-->
+<!--                android:contentDescription="Hairdresser"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:clickable="true"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onImageClick"-->
+<!--                app:srcCompat="@drawable/scissors1" />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/Dentist"-->
+<!--                android:contentDescription="Dentist"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:clickable="true"-->
+<!--                android:onClick="onImageClick"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                app:srcCompat="@drawable/dentist1" />-->
+            <Button
                 android:id="@+id/Hairdresser"
                 android:contentDescription="Hairdresser"
                 android:layout_width="wrap_content"
-                android:clickable="true"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onImageClick"
-                app:srcCompat="@drawable/scissors1" />
-            <ImageView
+                android:onClick="onButtonClicked" />
+
+            <Button
+                android:id="@+id/Chiropractor"
+                android:contentDescription="Chiropractor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClicked" />
+
+            <Button
+                android:id="@+id/Physiotherapist"
+                android:contentDescription="Physiotherapist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClicked" />
+
+            <Button
                 android:id="@+id/Dentist"
                 android:contentDescription="Dentist"
                 android:layout_width="wrap_content"
-                android:clickable="true"
-                android:onClick="onImageClick"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/dentist1" />
+                android:onClick="onButtonClicked" />
+
         </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
