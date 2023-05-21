@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 // implements View.OnClickListener  ***Previously added
-public class Userhomepage extends AppCompatActivity{
+public class UserHomepage extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

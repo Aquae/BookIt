@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         userButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Userloginsignup.class);
+                Intent intent = new Intent(MainActivity.this, UserLoginSignUp.class);
                 startActivity(intent);
             }
         });
@@ -183,5 +183,3 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 }
-
-// test

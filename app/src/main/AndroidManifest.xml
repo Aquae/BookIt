@@ -2,42 +2,45 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bookit">
-    <application>
-    <activity
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:exported="true"
-        android:theme="@style/Theme.BookIt"
-        android:name=".MainActivity"
-        tools:targetApi="31">
+    <application
+        android:theme="@style/Theme.BookIt">
 
+        <activity
+            android:name=".MainActivity"
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:exported="true"
 
+            tools:targetApi="31">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-    </activity>
+        </activity>
+
         <activity
-            android:name=".Userloginsignup"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat"></activity>
+            android:name=".UserLoginSignUp"
+            android:exported="true" />
+
         <activity
-        android:name=".BusinessSignup"
-        android:exported="true"></activity>
+            android:name=".BusinessSignup"
+            android:exported="true" />
 
         <activity
             android:name=".ServiceSignup"
-            android:exported="true"></activity>
-        <activity
-        android:name=".BusinessProfile"
-        android:exported="true"></activity>
-        <activity android:name=".Userhomepage"
-            android:exported="true"></activity>
-    </application>
+            android:exported="true" />
 
+        <activity
+            android:name=".BusinessProfile"
+            android:exported="true" />
+
+        <activity
+            android:name=".UserHomepage"
+            android:exported="true" />
+    </application>
 </manifest>

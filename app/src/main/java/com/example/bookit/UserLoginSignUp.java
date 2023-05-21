@@ -1,7 +1,7 @@
 package com.example.bookit;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import android.app.Activity;
+
 import android.widget.EditText;
 import android.widget.Button;
 import android.view.View;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 
 
-public class Userloginsignup extends AppCompatActivity {
+public class UserLoginSignUp extends AppCompatActivity {
     // Firebase Authentication
     private FirebaseAuth mAuth;
 
@@ -77,7 +77,7 @@ public class Userloginsignup extends AppCompatActivity {
                             // You can navigate to another activity or perform further actions
                         } else {
                             // Login failed
-                            Toast.makeText(Userloginsignup.this, "Authentication failed.",
+                            Toast.makeText(UserLoginSignUp.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -96,7 +96,7 @@ public class Userloginsignup extends AppCompatActivity {
                             // You can navigate to another activity or perform further actions
                         } else {
                             // Signup failed
-                            Toast.makeText(Userloginsignup.this, "Authentication failed.",
+                            Toast.makeText(UserLoginSignUp.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
