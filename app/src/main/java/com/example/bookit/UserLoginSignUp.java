@@ -2,6 +2,7 @@ package com.example.bookit;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import android.content.Intent;
 import android.widget.EditText;
 import android.widget.Button;
 import android.view.View;
@@ -49,7 +50,8 @@ public class UserLoginSignUp extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
                 loginWithEmail(email, password);
-                setContentView(R.layout.userhomepage_activity);
+                Intent intent = new Intent(UserLoginSignUp.this, UserHomepage.class);
+                startActivity(intent);
             }
         });
 
@@ -60,7 +62,8 @@ public class UserLoginSignUp extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
                 signupWithEmail(email, password);
-                setContentView(R.layout.userhomepage_activity);
+                Intent intent = new Intent(UserLoginSignUp.this, UserHomepage.class);
+                startActivity(intent);
             }
         });
     }

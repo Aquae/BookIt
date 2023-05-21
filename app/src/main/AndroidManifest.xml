@@ -42,5 +42,9 @@
         <activity
             android:name=".UserHomepage"
             android:exported="true" />
+
+        <activity
+            android:name=".DisplayBusiness"
+            android:exported="true" />
     </application>
 </manifest>
